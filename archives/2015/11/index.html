@@ -220,30 +220,54 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2015/11/20/hello-world/">Hello World</a>
+                                <a class="link-unstyled" href="/2015/11/21/JS-O-incompreedido-undefined/">[JS] O incompreendido undefined</a>
                         
                     </h1>
                     <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Nov 20 2015 23:24:34 GMT-0200">
+    <time itemprop="datePublished" content="Sat Nov 21 2015 00:35:00 GMT-0200">
 	
-		    20/11/2015
+		    21/11/2015
     	
     </time>
+    
+        <span>em </span>
+        
+    <a class="category-link" href="/categories/Programacao/">Programação</a>
+
+
     
 </div>
                 </div>
                 
                 
                     <div class="postShorten-content" itemprop="articleBody">
-                        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+                        <p>Quando estamos aprendendo uma linguagem de programação uma das primeiras coisas que devemos aprender são os tipos de dados nativos que a linguagem lhe proporciona… certo?</p>
+<p>Se você aprendeu <strong>Visual C#</strong> você deve ter visto os tipos por valor essenciais da linguagem <em>(bool, byte, short, int, long, float, double, decimal, enum, struct, char e etc)</em> além dos tipos por referência que lhe permitem maior flexibilidade na criação de seus próprios tipos (<em>class</em>) e na criação de cadeias de caracteres (<em>string</em>).</p>
+<p>Caso tenha sido <strong>Java</strong> então você deve saber qual a diferença entre um <em>int</em> e um <em>Integer</em>, e caso você saiba o conjunto dessas duas linguagens, você deveria saber a diferença entre os tipos de dados das duas linguagens, inclusive do tipo <em>enum</em>, que existe em ambas as linguagens, mas possuem maneiras bem diferentes de se trabalhar.</p>
+<p>No caso de <strong>Ruby</strong>, deveria saber a diferença entre um <em>Fixnum</em> e de um <em>Float</em> e como diferenciar um valor do outro em uma comparação igualitária.</p>
+<p>Se você diz que aprendeu <strong>JavaScript</strong>, então deve saber os tipos primitivos da linguagem <em>(boolean, number, string, object, function, null e etc)</em>. Inclusive se você vem de outra linguagem, provavelmente achará estranho algumas coisas no <strong>JavaScript</strong>, como o fato de que qualquer número aqui é representado simplesmente pelo tipo number. Aqui temos somente objetos, não temos classes (no caso de ES5). E quem vai atrás de uma maneira de emular uma classe, acaba se encontrando com um conceito chamado <em>constructor function</em>. Até aqui tudo bem, é só uma questão de adaptação… o problema é quando o desenvolvedor se encontra com os tipos <em>null</em> e <em>undefined</em>.</p>
+<p>Primeiramente, acho que <em>undefined</em> torna-se algo mais abstrato para os programadores que vem de outras linguagens como <strong>Visual C#/Java</strong> que possuem tipagem estática, nessas linguagens o null serve para representar uma ausência de valor para instâncias de classe.</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cliente fulano = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+<p>E ai que começa o problema, porque no <strong>JavaScript</strong> também possuímos o <em>null</em>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fulano = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<p>Aqui o <em>null</em> também serve para representar uma ausência de valor, enquanto <em>undefined</em> serve para representar simplesmente que a variável não teve um valor ainda definido.</p>
+<p>O valor <em>undefined</em> pode ser encontrado de diversas maneiras:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1: declarando uma variável sem atribuição</span></span><br><span class="line"><span class="keyword">var</span> xpto;</span><br><span class="line"><span class="built_in">console</span>.log(xpto); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2: parâmetro que não recebeu um valor na chamada do método</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">xpto</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(xpto); <span class="comment">// undefined</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3: funções sem retorno explícito</span></span><br><span class="line"><span class="keyword">var</span> xpto = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(xpto) <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4: funções com retorno sem valor definido</span></span><br><span class="line"><span class="keyword">var</span> xpto = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(xpto); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 5: o operador unário void analisa uma expressão a sua direita e retorna undefined</span></span><br><span class="line"><span class="keyword">var</span> xpto = <span class="keyword">void</span> <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(xpto); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p>O primeiro e segundo caso é bem intuitivo. O terceiro e o quarto caso basta entender que funções sempre retornam um valor, e então naqueles casos o retorna está indefinido. O quinto caso é mais uma questão de memorizar a <em>feature</em> da linguagem. O problema acontece nesse “sexto” caso:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xpto = <span class="literal">undefined</span>;</span><br></pre></td></tr></table></figure>
+<p>Antes de tudo, vamos analisar a situação. Eu estou definindo que a variável xpto receberá o valor indefinido. Isso é estranho, não? É claro… mas apesar dessa análise, ela está incorreta. Isso porque aquele <em>undefined</em> não é o valor indefinido, ele é a variável <em>undefined</em>. E o que acontece é que não temos como possuir o valor <em>undefined</em> diretamente. É necessário fazer algo como as cinco soluções anteriores para receber o valor <em>undefined</em>.</p>
+<p>Confuso, não? Mas eu vou lhe provar que <em>undefined</em> naquele contexto é uma variável e não um valor.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1: 'in' retorna um valor booleano indicando se uma propriedade existe em um objeto</span></span><br><span class="line"><span class="string">'undefined'</span> <span class="keyword">in</span> <span class="built_in">window</span>; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2: 'hasOwnProperty' vem de Object.prototype, ele é parecido com o 'in', mas ele verifica somente o próprio objeto nessa validação, desconsiderando a prototipagem do mesmo</span></span><br><span class="line"><span class="built_in">window</span>.hasOwnProperty(<span class="string">'undefined'</span>); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3: operação de atribuição e soma simples</span></span><br><span class="line"><span class="literal">undefined</span> = <span class="literal">undefined</span> + <span class="number">1</span>; <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4: undefined não existe em JSON</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123; a: <span class="keyword">void</span>(<span class="number">0</span>) &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj)); <span class="comment">// "&#123;&#125;"</span></span><br></pre></td></tr></table></figure>
+<p>O que acontece é que <em>undefined</em> é uma variável de contexto global, ela pertence ao objeto <em>window</em> no caso dos browsers. Como o escopo global é herdado para toda a aplicação, todos tem acesso a variável <em>undefined</em>, e como não é necessário fazer <em>window.algumacoisa</em> para acessar uma propriedade de contexto global, basta usar <em>algumacoisa</em>, que quando escrevemos <em>undefined</em> parece que estamos usando um valor, quando na verdade, estamos usando uma propriedade ligada ao window.</p>
+<p>Para provar que <em>undefined</em> é uma propriedade de window, os dois primeiros testes irão retornar true, enquanto o terceiro teste é mais interessante para ser feito uma análise. Se <em>undefined</em> fosse um valor em vez de uma variável, como poderia ser feito uma atribuição para um valor? Lembre-se: você atribuí valores para variáveis, não atribuí valores para valores. Provando mais uma vez:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> = <span class="number">3</span> <span class="comment">// Error!</span></span><br></pre></td></tr></table></figure>
+<p>Como 1 realmente é um valor, essa operação ocasionará erro, visto que um valor não pode estar ao lado esquerdo de uma atribuição. Já no caso do <em>undefined</em> não temos um erro. Outra coisa interessante é que você deve ter percebido que <em>undefined</em> não mudou de valor… a não ser que seu browser seja bem antigo. Mas por quê? Bem, na versão do ECMAScript 3 a propriedade <em>undefined</em> podia ter seu valor alterado, permitindo coisas assim acontecerem:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">undefined</span> = <span class="string">"surpresa!"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span>); <span class="comment">// "surpresa!"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xpto;</span><br><span class="line"><span class="built_in">console</span>.log(xpto === <span class="literal">undefined</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>Nada agradével, certo? Por isso é aconselhável que quando você escrever um código que precise de compatibilidade com browsers antigos feche o escopo do seu código e tenha seu <em>undefined</em> garantido.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">xpto, undefined</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// seu código aqui</span></span><br><span class="line">&#125;)(xpto); <span class="comment">// suas dependências passadas por parâmetro aqui</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ou</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">xpto</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> <span class="literal">undefined</span>;</span><br><span class="line">&#125;)(xpto);</span><br></pre></td></tr></table></figure>
+<p>Outra opção é não usar undefined para atribuir valores e no caso de verificações, use o operador typeof para ver se os valores estão indefinidos realmente.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">xpto</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> teste; <span class="comment">// não atribua 'undefined'</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">typeof</span> teste === <span class="string">'undefined'</span>); <span class="comment">// use sempre o 'typeof' para verificar se o valor está indefinido</span></span><br><span class="line">&#125;)(xpto);</span><br></pre></td></tr></table></figure>
+<p>Eu prefiro a última opção, e você?</p>
 
                         
                             
@@ -251,7 +275,7 @@
                         
                         
                             <p>
-                                <a href="/2015/11/20/hello-world/#post-footer" class="postShorten-excerpt_link link">
+                                <a href="/2015/11/21/JS-O-incompreedido-undefined/#post-footer" class="postShorten-excerpt_link link">
                                     Comentar e compartilhar
                                 </a>
                             </p>
@@ -276,7 +300,7 @@
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
-        Copyrights &copy; 2015 Gabriel Takashi Katakura. All Rights Reserved.
+        Copyrights &copy; 2016 Gabriel Takashi Katakura. All Rights Reserved.
     </span>
 </footer>
 
@@ -300,7 +324,7 @@
         
             <h4 id="about-card-name">Gabriel Takashi Katakura</h4>
         
-            <h5 id="about-card-bio"><p>author.bio</p>
+            <h5 id="about-card-bio"><p>Atualmente graduando em Ciência da Computação (FURB), sou só mais um eterno aprendiz com perfil voltado à Ciências Exatas.</p>
 </h5>
         
         
